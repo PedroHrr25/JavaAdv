@@ -1,5 +1,7 @@
+import java.time.LocalTime;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,6 +22,16 @@ public class Main {
 //BiPredicate
         BiPredicate<String, Integer> checkLength = (str, len) -> str.length() == len;
         System.out.println(checkLength.test("Vatican City",8));//false
+
+//supplier
+        Supplier<StringBuilder> supSB = () -> new StringBuilder();
+        System.out.println("Sbpplier SB: " + supSB.get().append("SK"));// Supplier SB: SK
+        Supplier<LocalTime> supTime = () -> LocalTime.now();
+        System.out.println("Suppler Time: " + supTime.get()); // Supplier Time :
+        Supplier<Double> sRandom = () -> Math.random();
+        System.out.println("Supplier Number: " + sRandom.get()); //Supplier Number ...
+
+
 
 
         Evaluate<Integer> lambda = i -> {return i < 0;};
