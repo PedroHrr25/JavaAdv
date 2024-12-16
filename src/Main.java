@@ -1,7 +1,8 @@
 import java.time.LocalTime;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,12 +32,40 @@ public class Main {
         Supplier<Double> sRandom = () -> Math.random();
         System.out.println("Supplier Number: " + sRandom.get()); //Supplier Number ...
 
+//Consumer
+        Consumer<String> printC = s -> System.out.println(s);
+        System.out.println("To be or not to be, that is the question");
 
+        List<String> names = new ArrayList<>();
+        names.add("John"); names.add("Mary");
+        names.forEach(printC);
 
+//BiConsumer
+        var mapCapitalCities = new HashMap<String, String>();
+        BiConsumer<String, String> biCon = (key, value ) -> mapCapitalCities.put(key,value);
+        biCon.accept("Dublin","Ireland");
+        biCon.accept("Washington D.C","USA");
+
+        BiConsumer<String , String> mapPrint = (key, value) -> System.out.println(key + " is the capital of: "+ value);
+        mapCapitalCities.forEach(mapPrint);
 
         Evaluate<Integer> lambda = i -> {return i < 0;};
         System.out.println("Evaluate: " + lambda.isNegative(-1));
         System.out.println("Evaluate: " + lambda.isNegative(1));
+
+//Function
+        Function<String, Integer> fn2 = s -> s.length();
+        System.out.println("Function: " + fn2.apply("Moscow"));//6
+
+//BiFunction
+        BiFunction<String , String, Integer> biFn = (s1, s2) -> s1.length() + s2.length();
+        System.out.println("BiFunction: " + biFn.apply("Willian", "Shakespeare")); // 18
+
+        BiFunction<String , String, String> biFn2 = (s1,s2) -> s1.concat(s2);
+        System.out.println("BiFunction: " + biFn2.apply("Willian ", "Shakespeare"));
+
+
+
 
 
 
