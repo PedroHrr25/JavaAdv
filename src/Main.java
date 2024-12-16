@@ -63,6 +63,10 @@ public class Main {
 
         BiFunction<String , String, String> biFn2 = (s1,s2) -> s1.concat(s2);
         System.out.println("BiFunction: " + biFn2.apply("Willian ", "Shakespeare"));
+//UnaryOperator
+    // a diferença basica do UnaryOperator é que ele transforma a entrada na saida, enquanto o Function precisa de 2 parametros 1 que vai ser a entrada e outro que vai ser a saida.
+        UnaryOperator<String> unaryOp = name -> "My name is "+ name;
+        System.out.println("UnaryOperator: " + unaryOp.apply("Sean"));
 
 
 
