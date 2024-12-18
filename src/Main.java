@@ -68,6 +68,20 @@ public class Main {
         UnaryOperator<String> unaryOp = name -> "My name is "+ name;
         System.out.println("UnaryOperator: " + unaryOp.apply("Sean"));
 
+// method references
+    //bound
+        String name = "Mr. Joe Bloggs";
+        Supplier<String> lowerLambda = () -> name.toLowerCase();
+        Supplier<String> lowerMethodReference = name::toLowerCase;
+        System.out.println(lowerLambda.get());
+        System.out.println(lowerMethodReference.get());
+
+        Predicate<String> tittleLambda =  (title) -> name.startsWith(title);
+        Predicate<String> tittleMethodRerefence = name::startsWith;
+        System.out.println(tittleLambda.test("Mr.")); //true
+        System.out.println(tittleMethodRerefence.test("Ms.")); //false
+
+
 
 
 
