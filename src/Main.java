@@ -1,7 +1,5 @@
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.function.*;
 
 public class Main {
@@ -91,6 +89,16 @@ public class Main {
         BiFunction<String, String, String>  contatMR = String::concat;
         System.out.println(concatL.apply("Sean ", "Kennedy"));
         System.out.println(contatMR.apply("Sean ","Kennedy"));
+    //staticMethod Reference
+        Consumer<List<Integer>> sortL = list -> Collections.sort(list);
+        Consumer<List<Integer>> sortMR = Collections::sort;
+        List<Integer> listOfNumbers = Arrays.asList(2,1,5,6,8);
+        sortL.accept(listOfNumbers);
+        System.out.println(listOfNumbers);
+
+        listOfNumbers = Arrays.asList(4,5,2,1,2);
+        sortMR.accept(listOfNumbers);
+        System.out.println(listOfNumbers);
 
 
 
