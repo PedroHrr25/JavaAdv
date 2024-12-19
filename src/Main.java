@@ -81,6 +81,17 @@ public class Main {
         System.out.println(tittleLambda.test("Mr.")); //true
         System.out.println(tittleMethodRerefence.test("Ms.")); //false
 
+    //unbound
+        Function<String, String> upperL = s -> s.toUpperCase();
+        Function<String, String> upperMR = String::toUpperCase;
+        System.out.println(upperL.apply("sean"));
+        System.out.println(upperMR.apply("sean"));
+
+        BiFunction<String, String, String> concatL = (s1,s2) -> s1.concat(s2);
+        BiFunction<String, String, String>  contatMR = String::concat;
+        System.out.println(concatL.apply("Sean ", "Kennedy"));
+        System.out.println(contatMR.apply("Sean ","Kennedy"));
+
 
 
 
