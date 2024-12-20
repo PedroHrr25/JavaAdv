@@ -1,6 +1,11 @@
+import LambdaLab.Person;
+
 import java.time.LocalTime;
 import java.util.*;
 import java.util.function.*;
+
+import static LambdaLab.LambdasLab.sortAge;
+import static LambdaLab.LambdasLab.sortName;
 
 public class Main {
     public static void main(String[] args) {
@@ -115,6 +120,13 @@ public class Main {
         System.out.println(ls1);
         System.out.println(ls2);
 
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person("John", 25, 1.8));
+        personList.add(new Person("Mary", 15, 1.6));
+        personList.add(new Person("Mike", 35, 1.7));
+        personList.add(new Person("Tom", 45, 1.9));
+        sortAge(personList);
+        sortName(personList);
 
 
 
