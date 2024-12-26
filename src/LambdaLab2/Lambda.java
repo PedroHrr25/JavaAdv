@@ -1,15 +1,17 @@
 package LambdaLab2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.function.*;
 
 public class Lambda {
 
     //1
     public static void main(String[] args) {
+
+        Stack<Integer> stack1;
+        Stack<Integer> stack2;
+        stack1 = new Stack<>();
+        stack2 = new Stack<>();
         List list = Arrays.asList(1, 2, 6, 5,3);
         Consumer<List<Integer>> lambda = l -> Collections.sort(l);
         System.out.println(list);
@@ -70,7 +72,6 @@ public class Lambda {
         List<String> listConstructor4  = methodRef6.apply(5);
         listConstructor4.add("Method Reference");
         System.out.println(listConstructor4);
-
 
 
 
