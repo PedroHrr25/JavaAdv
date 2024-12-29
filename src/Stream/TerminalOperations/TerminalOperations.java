@@ -1,4 +1,4 @@
-package Stream;
+package Stream.TerminalOperations;
 
 import java.util.List;
 import java.util.Optional;
